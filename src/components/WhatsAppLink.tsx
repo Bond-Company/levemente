@@ -5,7 +5,7 @@ import { Icon } from './Icon'
 type WhatsAppLinkProps = {
   children: ReactNode
   message?: string
-  variant?: 'primary' | 'secondary' | 'light'
+  variant?: 'primary' | 'secondary' | 'light' | 'quiet'
   size?: 'md' | 'sm'
   className?: string
   /** Texto extra para leitores de tela (ex.: o link abre em nova aba). */
@@ -31,6 +31,7 @@ export function WhatsAppLink({
     >
       <Icon name="whatsapp" size={size === 'sm' ? 18 : 20} />
       <span>{children}</span>
+      {variant === 'quiet' && <Icon name="arrow" size={18} className="btn-arrow" />}
       <span className="sr-only"> {srHint}</span>
     </a>
   )

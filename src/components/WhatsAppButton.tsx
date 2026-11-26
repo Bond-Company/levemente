@@ -41,7 +41,7 @@ export function WhatsAppButton() {
       data-cta="whatsapp-floating"
       tabIndex={shown ? undefined : -1}
       aria-hidden={shown ? undefined : true}
-      className={`fixed right-[max(1rem,env(safe-area-inset-right))] bottom-[max(1rem,env(safe-area-inset-bottom))] z-40 inline-flex size-14 items-center justify-center rounded-pill bg-petrol-700 text-sand-50 shadow-lift ring-1 ring-white/15 transition-[opacity,transform,background-color] duration-500 ease-gentle hover:bg-petrol-800 sm:right-6 sm:bottom-6 ${
+      className={`fixed right-[max(1rem,env(safe-area-inset-right))] bottom-[max(1rem,env(safe-area-inset-bottom))] z-40 inline-flex size-14 items-center justify-center rounded-pill bg-petrol-700 text-sand-50 shadow-lift ring-1 ring-white/15 transition-[opacity,transform,background-color] duration-[250ms] ease-gentle active:scale-[0.97] [@media(hover:hover)]:hover:bg-petrol-800 sm:right-6 sm:bottom-6 ${
         shown ? 'translate-y-0 opacity-100' : 'pointer-events-none translate-y-4 opacity-0'
       }`}
     >

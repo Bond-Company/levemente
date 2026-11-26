@@ -8,12 +8,12 @@ export function Footer() {
   const { address, professional } = clinicConfig
 
   return (
-    <footer data-hide-floating className="on-dark bg-petrol-950 pt-20 pb-10 text-petrol-100">
+    <footer data-hide-floating className="on-dark bg-petrol-950 pt-4 pb-10 text-petrol-100">
       <div className="container-page">
-        <div className="grid gap-12 md:grid-cols-2 lg:grid-cols-12">
+        <div className="grid gap-12 border-t border-petrol-100/12 pt-16 md:grid-cols-2 lg:grid-cols-12">
           <div className="lg:col-span-4">
             <a href="/#inicio" className="inline-block rounded-sm" aria-label="LeveMente — voltar ao início">
-              <BrandLogo variant="stacked" tone="light" className="h-24 w-auto" />
+              <BrandLogo variant="stacked" tone="light" className="h-16 w-auto" />
             </a>
             <p className="mt-6 max-w-xs text-[0.9375rem] leading-relaxed text-petrol-100/80">{copy.footer.description}</p>
           </div>

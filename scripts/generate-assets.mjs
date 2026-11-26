@@ -88,3 +88,17 @@ for (const photo of photos) {
   }
   await sharp(input).rotate().resize({ width: 1200 }).jpeg({ quality: 80, mozjpeg: true }).toFile(pub('images', `${photo.name}-1200.jpg`))
 }
+
+// Recorte de detalhe (mãos e caderno) da foto da profissional, usado na seção
+// "A profissional". A caixa está em pixels do original assets-src/anna.jpg (1792×2400).
+const detailInput = path.join(root, 'assets-src', 'anna.jpg')
+try {
+  await fs.access(detailInput)
+  const box = { left: 720, top: 1010, width: 720, height: 900 }
+  for (const width of [600, 900]) {
+    await sharp(detailInput).rotate().extract(box).resize({ width }).webp({ quality: 80 }).toFile(pub('images', `anna-paula-detalhe-${width}.webp`))
+  }
+  await sharp(detailInput).rotate().extract(box).resize({ width: 900 }).jpeg({ quality: 80, mozjpeg: true }).toFile(pub('images', 'anna-paula-detalhe-900.jpg'))
+} catch {
+  // sem original, mantém os arquivos já gerados
+}

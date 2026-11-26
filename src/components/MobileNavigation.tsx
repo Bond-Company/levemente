@@ -37,8 +37,10 @@ export function MobileNavigation({ open, onClose }: MobileNavigationProps) {
       id="menu-mobile"
       ref={panelRef}
       inert={!open}
-      className={`fixed inset-x-0 top-[4.5rem] bottom-0 overflow-y-auto bg-sand-50 transition-[opacity,transform,visibility] duration-500 ease-gentle lg:hidden ${
-        open ? 'visible translate-y-0 opacity-100' : 'invisible -translate-y-3 opacity-0'
+      className={`fixed inset-x-0 top-[4.5rem] bottom-0 overflow-y-auto bg-sand-50 transition-[opacity,transform,visibility] lg:hidden ${
+        open
+          ? 'visible translate-y-0 opacity-100 duration-300 ease-[var(--ease-drawer)]'
+          : 'invisible -translate-y-2 opacity-0 duration-200 ease-gentle'
       }`}
     >
       <nav aria-label="Menu" className="container-page flex min-h-full flex-col pt-6 pb-10">
